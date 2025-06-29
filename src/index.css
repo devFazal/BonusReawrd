@@ -1,0 +1,80 @@
+/* # Create a custom CSS file for common styles and responsive layout custom_css="" " */
+
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.App {
+  padding: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .App {
+    padding: 0.5rem;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    white-space: pre-wrap;
+  }
+
+  td::before {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 45%;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1)::before {
+    content: "Date";
+  }
+
+  td:nth-of-type(2)::before {
+    content: "Transaction ID";
+  }
+
+  td:nth-of-type(3)::before {
+    content: "Amount";
+  }
+
+  td:nth-of-type(4)::before {
+    content: "Reward Points";
+  }
+}
+
